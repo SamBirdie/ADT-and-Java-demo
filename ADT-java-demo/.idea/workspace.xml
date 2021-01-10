@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e82cbe3-f14d-4f7e-a8f0-367e0caaf12d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ADT_demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ADT_demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ADT_demo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +35,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
@@ -60,11 +61,22 @@
       <option name="presentableId" value="Default" />
       <updated>1610191635098</updated>
       <workItem from="1610191636625" duration="70000" />
-      <workItem from="1610291177143" duration="1572000" />
+      <workItem from="1610291177143" duration="3946000" />
     </task>
+    <task id="LOCAL−00001" summary="Hahmottelun alkua">
+      <created>1610294386949</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1610294386949</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Hahmottelun alkua" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hahmottelun alkua" />
   </component>
 </project>
