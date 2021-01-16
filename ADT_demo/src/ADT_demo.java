@@ -44,6 +44,7 @@ public class ADT_demo {
             System.out.print("> ");
             String test = scanner.nextLine();
             System.out.println();
+            
 
             switch (test.toLowerCase()) {
                 case "1":
@@ -53,7 +54,7 @@ public class ADT_demo {
                     exampleWithTree(scanner);
                     break;
                 case "q":
-                    System.out.println("Thank you and have a nice day!");
+                    System.out.println("\t\tThank you and have a nice day!\n");
                     continueWhileLoop = false;
                     break;
                 default:
@@ -65,35 +66,43 @@ public class ADT_demo {
     private static void exampleWithHashMap(Scanner scanner) {
         HashMap<Integer, String> demoHM = new HashMap<>();
         ArrayList<String> demoAL = new ArrayList<>();
-        int addingHMTime=2, addingALTime=2, gettingHMTime, gettingALTime;
+        int gettingHMTime = 0, gettingALTime = 0;
         String name = "";
         while (name.isEmpty()) {
             System.out.print("Enter your last name: ");
             name = scanner.nextLine();
         }
 
-        // start counting time
-        for (int i = 0; i < 9000000; i++)
+        for (int i = 0; i < 10000000; i++)
             demoHM.put(i, i + name);
-        // stop counting time
 
-        // start counting time
-        for (int i = 0; i < 9000000; i++)
+        for (int i = 0; i < 10000000; i++)
             demoAL.add(i + name);
-        // stop counting time
 
-        /* Irrelevant!
-        System.out.println("\n\tAdding generated strings to HashMap took " + addingHMTime + " ms and "
-
-                + addingALTime + " ms to ArrayList.");
-        */
-        //System.out.println(demoHM);
+        // System.out.println(demoHM);
 
         // TODO: get few random strings and show get-times
+        System.out.println("\n\n\n\t100 random elements fetched from HashMap and reference ArrayList.");
+        System.out.println("\n\n\t\t- Median fetching time from HashMap: " + gettingHMTime + " milliseconds.");
+        System.out.println("\n\t\t- Median fetching time from ArrayList: " + gettingALTime + " milliseconds.");
+
     }
 
     private static void exampleWithTree(Scanner scanner) {
         // TODO
-        System.out.println("Tree-example here");
+        ArrayList<String> demoAL = new ArrayList<>();
+        Tree<String> demoTree = new Tree<>(); // TÄMÄ KUNTOON
+        int gettingTreeTime = 0, gettingALTime = 0;
+        String name = "";
+        while (name.isEmpty()) {
+            System.out.print("Enter your last name: ");
+            name = scanner.nextLine();
+        }
+
+        for (int i = 0; i < 10000000; i++)
+            demoHM.put(i, i + name);
+
+        for (int i = 0; i < 10000000; i++)
+            demoAL.add(i + name);
     }
 }
