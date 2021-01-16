@@ -100,7 +100,7 @@ public class ADT_demo {
         }
 
         for (int i = 0; i < 10000000; i++)
-            demoHM.put(i, i + name);
+            demoTree.put(i, i + name);
 
         for (int i = 0; i < 10000000; i++)
             demoAL.add(i + name);
