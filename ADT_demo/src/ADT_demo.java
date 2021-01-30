@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ADT_demo {
     // TODO-option: other functions for adt:s, for example adding and altering and their time-measuring
+    long aika1, aika2; // näihin aikoja talteen
 
     public static void main(String[] args) {
         // argumentteina toiminto; jos ei anneta, tulostetaan valikko
@@ -90,7 +91,7 @@ public class ADT_demo {
 
     private static void exampleWithTree(Scanner scanner) {
         // TODO
-        ArrayList<String> demoAL = new ArrayList<>();
+        /*ArrayList<String> demoAL = new ArrayList<>();
         Tree<String> demoTree = new Tree<>(); // TÄMÄ KUNTOON
         int gettingTreeTime = 0, gettingALTime = 0;
         String name = "";
@@ -103,6 +104,6 @@ public class ADT_demo {
             demoTree.put(i, i + name);
 
         for (int i = 0; i < 10000000; i++)
-            demoAL.add(i + name);
+            demoAL.add(i + name);*/
     }
 }
