@@ -6,6 +6,16 @@ public class ADT_demo {
     // TODO-option: other functions for adt:s, for example adding and altering and their time-measuring
     long aika1, aika2; // näihin aikoja talteen
 
+    /* Mittaamisen esimerkki:
+        // kutsutaan mittausta
+        long alku = System.nanoTime();
+        SortedMap<Integer, Long> tulos = testattava.jononNopeus(J, min, max);
+        long aika = System.nanoTime() - alku;
+
+        // tulostetaan mittaukseen mennyt aika, max 2s/alkiomÃ¤Ã¤rÃ¤ oli tarkoitus kÃ¤yttÃ¤Ã¤
+        System.out.println("Mittaus kesti " + (1.0*aika / (1000.0*1000*1000*odotetutAvaimet.size())) + " s/alkiomÃ¤Ã¤rÃ¤.");
+*/
+        
     public static void main(String[] args) {
         // argumentteina toiminto; jos ei anneta, tulostetaan valikko
 
@@ -83,7 +93,7 @@ public class ADT_demo {
         // System.out.println(demoHM);
 
         // TODO: get few random strings and show get-times
-        System.out.println("\n\n\n\t100 random elements fetched from HashMap and reference ArrayList.");
+        System.out.println("\n\n\n\t100 random elements fetched from HashMap and ArrayList for the reference.");
         System.out.println("\n\n\t\t- Median fetching time from HashMap: " + gettingHMTime + " milliseconds.");
         System.out.println("\n\t\t- Median fetching time from ArrayList: " + gettingALTime + " milliseconds.");
 
