@@ -3,6 +3,7 @@ import java.util.*;
 public class ADTDemo {
 
     private static int maxElements = 65535; // =2^16-1 elements, when binary tree depth is 16
+    private static int warmingUpTimeInSeconds = 2;
 
     public static void main(String[] args) {
 
@@ -55,7 +56,7 @@ public class ADTDemo {
 
         Random random = new Random();
         Long medianGetResultFromArrayList = testGetAL(random);
-        Long medianGetResultFromTree = testGetTree();
+        Long medianGetResultFromTree = testGetTree(random);
 
         printResults("BinaryTree", medianGetResultFromTree, medianGetResultFromArrayList);
     }
@@ -72,11 +73,20 @@ public class ADTDemo {
             getALValue.add(d);
         Collections.shuffle(getALValue);
 
+
+        // Warming up:
+        System.out.println("Warming up ArrayList-engine for " + warmingUpTimeInSeconds + " seconds...");
+        long endWarming = System.nanoTime() + warmingUpTimeInSeconds*1000L*1000*1000;
+        while (System.nanoTime() < endWarming)
+            demoAL.contains(getALValue.get(random.nextInt(maxElements)));
+
+
+        // Testing ArrayList:
+        System.out.println("Testing for ArrayList...");
         long start;
         long end;
         ArrayList<Long> gettingALTimes = new ArrayList<>();
 
-        // Testing ArrayList:
         for (int j = 0; j < 10; j++) {
             start = System.nanoTime();
             for (int k = j*100; k < (j+1)*100; k++)
@@ -102,24 +112,31 @@ public class ADTDemo {
         }
         Collections.shuffle(getHSValue);
 
-        long start;
-        long end;
-        ArrayList<Long> gettingHMTimes = new ArrayList<>();
+        // Warming up:
+        System.out.println("Warming up HashSet-engine for " + warmingUpTimeInSeconds + " seconds...");
+        long endWarming = System.nanoTime() + warmingUpTimeInSeconds*1000L*1000*1000;
+        while (System.nanoTime() < endWarming)
+            demoHS.contains(getHSValue.get(random.nextInt(maxElements)));
 
         // Testing HashMap:
+        System.out.println("Testing for HashSet...");
+        long start;
+        long end;
+        ArrayList<Long> gettingHSTimes = new ArrayList<>();
+
         for (int j = 0; j < 10; j++) {
             start = System.nanoTime();
             for (int k = j*100; k < (j+1)*100; k++)
                 demoHS.contains(getHSValue.get(k)); // This could be stored into variable if needed
             end = System.nanoTime();
-            gettingHMTimes.add((end - start) / 100);
+            gettingHSTimes.add((end - start) / 100);
         }
-        Collections.sort(gettingHMTimes);
+        Collections.sort(gettingHSTimes);
 
-        return gettingHMTimes.get(gettingHMTimes.size() / 2);
+        return gettingHSTimes.get(gettingHSTimes.size() / 2);
     }
 
-    private static Long testGetTree() {
+    private static Long testGetTree(Random random) {
 
         ArrayList<Double> elementsToTree = new ArrayList<>(maxElements);
         ArrayList<Double> getTreeValue = new ArrayList<>(maxElements);
@@ -131,6 +148,14 @@ public class ADTDemo {
             getTreeValue.add(d);
         Collections.shuffle(getTreeValue);
 
+        // Warming up:
+        System.out.println("Warming up Tree-engine for " + warmingUpTimeInSeconds + " seconds...");
+        long endWarming = System.nanoTime() + warmingUpTimeInSeconds*1000L*1000*1000;
+        while (System.nanoTime() < endWarming)
+            ourTree.contains(getTreeValue.get(random.nextInt(maxElements)));
+
+        // Testing ArrayList:
+        System.out.println("Testing for Tree...");
         long start;
         long end;
         ArrayList<Long> gettingTreeTimes = new ArrayList<>();
