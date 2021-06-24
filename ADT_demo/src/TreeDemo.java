@@ -8,27 +8,17 @@ public class TreeDemo {
     public TreeDemo(ArrayList<Double> nodeElements) {
         Collections.sort(nodeElements);
         root = new NodeDemo(nodeElements.get(nodeElements.size()/2));
+
         ArrayList<Double> leftSubTreeElements = new ArrayList();
         for (int i = 0; i < nodeElements.size()/2; i++)
             leftSubTreeElements.add(nodeElements.get(i));
+
         ArrayList<Double> rightSubTreeElements = new ArrayList();
         for (int i = nodeElements.size()/2+1; i < nodeElements.size(); i++)
             rightSubTreeElements.add(nodeElements.get(i));
+
         root.setLeft(setSubTrees(leftSubTreeElements));
         root.setRight(setSubTrees(rightSubTreeElements));
-
-    }
-
-    public NodeDemo getRoot() {
-        return this.root;
-    }
-
-    public boolean add(Double d) {
-        if (this.contains(d))
-            return false;
-        else
-            addToTree(d);
-        return true;
     }
 
     public boolean contains(Double d) {
@@ -46,7 +36,6 @@ public class TreeDemo {
 
     private static NodeDemo setSubTrees(ArrayList<Double> list) {
         NodeDemo node;
-        //System.out.println(list);
         if (list.size() == 3) {
             node = new NodeDemo(list.get(1));
             node.setLeft(new NodeDemo(list.get(0)));
@@ -56,24 +45,15 @@ public class TreeDemo {
             ArrayList<Double> leftSubTreeElements = new ArrayList();
             for (int i = 0; i < list.size()/2; i++)
                 leftSubTreeElements.add(list.get(i));
+
             ArrayList<Double> rightSubTreeElements = new ArrayList();
             for (int i = list.size()/2+1; i < list.size(); i++)
                 rightSubTreeElements.add(list.get(i));
+
             node = new NodeDemo(list.get(list.size()/2));
-            node.setLeft(setSubTrees(leftSubTreeElements));
-            node.setRight(setSubTrees(rightSubTreeElements));
             node.setLeft(setSubTrees(leftSubTreeElements));
             node.setRight(setSubTrees(rightSubTreeElements));
         }
         return node;
-
-        //(nodeElements.subList(0,(nodeElements.size()/2)))
-        //return new NodeDemo("test");
     }
-
-    private static void addToTree(Double d) {
-        // TODO: lisääminen oikeaan paikkaan
-        System.out.println("Lisätään " + d);
-    }
-    // private-puolelle puun toiminnot, mm. tasapainottaminen yms.
 }

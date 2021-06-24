@@ -16,14 +16,14 @@ public class NodeDemo {
         this.right = right;
     }
 
-    public NodeDemo getLeft() {
-        return this.left;
+    public Double getElement() {
+        return element;
     }
+
+    public NodeDemo getLeft() { return this.left; }
+
     public NodeDemo getRight() {
         return this.right;
     }
 
-    public Double getElement() {
-        return element;
-    }
 }
