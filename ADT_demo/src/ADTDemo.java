@@ -14,8 +14,8 @@ public class ADTDemo {
         boolean continueWhileLoop = true;
         while (continueWhileLoop) {
             System.out.println("\n\n\n\t--- MENU ---\n");
-            System.out.println("1) Demonstration of ADT-HashSet");
-            System.out.println("2) Demonstration of ADT-BinaryTree");
+            System.out.println("1) Demonstration of hash set");
+            System.out.println("2) Demonstration of binary tree");
             System.out.println("q) Quit/Exit");
             System.out.print("> ");
             String choice = scanner.nextLine();
@@ -145,7 +145,7 @@ public class ADTDemo {
         Collections.shuffle(getBinaryTreeValue);
 
         // Warming up:
-        System.out.println("Warming up Tree-engine for " + warmingUpTimeInSeconds + " seconds...");
+        System.out.println("Warming up BinaryTree-engine for " + warmingUpTimeInSeconds + " seconds...");
         long endWarming = System.nanoTime() + warmingUpTimeInSeconds*1000L*1000*1000;
         while (System.nanoTime() < endWarming)
             demoBT.contains(getBinaryTreeValue.get(random.nextInt(maxElements)));
@@ -173,7 +173,7 @@ public class ADTDemo {
                 adt + " and Arraylist");
         System.out.println("\tAND\n\tSearched 1000 random elements from " + adt + " and ArrayList.");
         System.out.println("\n\t\tRESULTS:");
-        System.out.println("\n\t\t- Median searching time from ArrayList: " + alTime + " nanoseconds.");
+        System.out.println("\n\t\t- Median searching time from ArrayList (for reference): " + alTime + " nanoseconds.");
         System.out.println("\t\t- Median searching time from " + adt + ": " + xTime + " nanoseconds.");
     }
 }
