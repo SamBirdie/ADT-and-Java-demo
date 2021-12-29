@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ADT_demo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ADT_demo_jar</output-path>
+    <root id="archive" name="ADT_demo.jar">
+      <element id="module-output" name="ADT_demo" />
+    </root>
+  </artifact>
+</component>
